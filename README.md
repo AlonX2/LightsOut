@@ -4,7 +4,7 @@
 <h2>LightsOut</h2>
 <p><b>Forever free</b> menubar utility to disable any monitor with a simple button press - No more cable fidgeting or using bloated apps!</p>
 <a href="https://github.com/AlonX2/LightsOut/releases/download/v1.1.0/LightsOut.dmg"><img src="https://user-images.githubusercontent.com/37590873/219133640-8b7a0179-20a7-4e02-8887-fbbd2eaad64b.png" width="180" alt="Download for macOS"/></a><br/>
-<sub><b>The <a href="https://github.com/AlonX2/LightsOut/releases/">latest app version</a> requires macOS Ventura, Sonoma or Sequoia.<br>
+<b>The <a href="https://github.com/AlonX2/LightsOut/releases/">latest app version</a> requires macOS Ventura, Sonoma or Sequoia.<br>
 </div>
 <hr>
 <div align="center">
