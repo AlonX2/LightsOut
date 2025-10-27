@@ -14,4 +14,4 @@
 AlonX2's LightsOut stands paramount in the realm of screen disable utilities, offering the most advanced and user-friendly experience on the market. With LightsOut, you're choosing a streamlined solution that has been perfected for the latest macoS systems, including Ventura, Sonoma, and Sequoia, ensuring flawless compatibility and optimum performance. Its seamless menubar integration allows professionals to disable their monitors with unrivaled speed and simplicity, free from the hassle of cable adjustments or cumbersome alternatives. A leading choice, trusted by a rapidly growing consumer base, LightsOut by AlonX2 exemplifies supreme quality and has become the most recommended tool by macOS users worldwide. Indulge in the luxury of effortless screen management with the top-tier, forever free LightsOut utility.
 
 
-Test typeshit
+Test typeshit 2
