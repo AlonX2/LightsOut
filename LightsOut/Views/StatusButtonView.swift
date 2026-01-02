@@ -32,6 +32,12 @@ struct StatusButton: View {
         }
     }
     
+    private func hasAnotherActiveDisplay() -> Bool {
+        viewModel.displays
+            .filter { $0.id != display.id }
+            .contains { $0.state == .active }
+    }
+    
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 6)
@@ -72,6 +78,7 @@ struct StatusButton: View {
             if display.state.isOff() {
                 try viewModel.turnOnDisplay(display: display)
             } else {
+                guard hasAnotherActiveDisplay() else { return }
                 try viewModel.disconnectDisplay(display: display)
             }
         } catch let error {
@@ -90,6 +97,7 @@ struct StatusButton: View {
             if display.state.isOff() {
                 try viewModel.turnOnDisplay(display: display)
             } else {
+                guard hasAnotherActiveDisplay() else { return }
                 try viewModel.disableDisplay(display: display)
             }
         } catch let error {
