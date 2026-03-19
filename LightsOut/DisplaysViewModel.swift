@@ -8,13 +8,26 @@ import SwiftUI
 @_silgen_name("CGSConfigureDisplayEnabled")
 func CGSConfigureDisplayEnabled(_ cid: CGDisplayConfigRef, _ display: UInt32, _ enabled: Bool) -> Int
 
+private let displayReconfigurationCallback: CGDisplayReconfigurationCallBack = { _, flags, userInfo in
+    guard !flags.contains(.beginConfigurationFlag), let userInfo = userInfo else { return }
+    let viewModel = Unmanaged<DisplaysViewModel>.fromOpaque(userInfo).takeUnretainedValue()
+    DispatchQueue.main.async {
+        viewModel.fetchDisplays()
+    }
+}
+
 class DisplaysViewModel: ObservableObject {
     @Published var displays: [DisplayInfo] = []
     private var gammaService = GammaUpdateService()
     private var arrengementCache = DisplayArrangementCacheService()
-    
+
     init() {
         fetchDisplays()
+        CGDisplayRegisterReconfigurationCallback(displayReconfigurationCallback, Unmanaged.passUnretained(self).toOpaque())
+    }
+
+    deinit {
+        CGDisplayRemoveReconfigurationCallback(displayReconfigurationCallback, Unmanaged.passUnretained(self).toOpaque())
     }
     
     func fetchDisplays() {
