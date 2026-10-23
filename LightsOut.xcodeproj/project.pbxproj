@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F98E00782CFA08FD00A25515 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = F98E00772CFA08FD00A25515 /* LaunchAtLogin */; };
-		F98E007E2CFA1D6200A25515 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = F98E007D2CFA1D6200A25515 /* Sparkle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +41,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F98E00782CFA08FD00A25515 /* LaunchAtLogin in Frameworks */,
-				F98E007E2CFA1D6200A25515 /* Sparkle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +84,6 @@
 			name = LightsOut;
 			packageProductDependencies = (
 				F98E00772CFA08FD00A25515 /* LaunchAtLogin */,
-				F98E007D2CFA1D6200A25515 /* Sparkle */,
 			);
 			productName = LightsOut;
 			productReference = F9C24CAF2CF67884004094EC /* LightsOut.app */;
@@ -119,7 +116,6 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				F98E00762CFA08FD00A25515 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
-				F98E007C2CFA1D6200A25515 /* XCRemoteSwiftPackageReference "Sparkle" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F9C24CB02CF67884004094EC /* Products */;
@@ -284,7 +280,17 @@
 				DEVELOPMENT_ASSET_PATHS = "\"LightsOut/Preview Content\"";
 				DEVELOPMENT_TEAM = W77DXU4YUN;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = NO;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LightsOut/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
@@ -317,7 +323,17 @@
 				DEVELOPMENT_ASSET_PATHS = "\"LightsOut/Preview Content\"";
 				DEVELOPMENT_TEAM = W77DXU4YUN;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = NO;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LightsOut/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
@@ -367,14 +383,6 @@
 				version = 1.1.0;
 			};
 		};
-		F98E007C2CFA1D6200A25515 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sparkle-project/Sparkle";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.6.4;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -382,11 +390,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F98E00762CFA08FD00A25515 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */;
 			productName = LaunchAtLogin;
-		};
-		F98E007D2CFA1D6200A25515 /* Sparkle */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F98E007C2CFA1D6200A25515 /* XCRemoteSwiftPackageReference "Sparkle" */;
-			productName = Sparkle;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

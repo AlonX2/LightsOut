@@ -4,14 +4,12 @@
 //
 
 import AppKit
-import Sparkle
+import LaunchAtLogin
 
 class ContextMenuManager {
-    private let updateController: SPUUpdater
     private weak var statusItem: NSStatusItem?
 
-    init(updateController: SPUUpdater, statusItem: NSStatusItem) {
-        self.updateController = updateController
+    init(statusItem: NSStatusItem) {
         self.statusItem = statusItem
     }
 
@@ -19,30 +17,18 @@ class ContextMenuManager {
         guard let statusItem = statusItem else { return }
         
         let menu = NSMenu()
-
-        // Check for Updates
-        let checkForUpdatesItem = NSMenuItem(
-            title: "Check for Updates",
-            action: #selector(checkForUpdates),
-            keyEquivalent: ""
+        
+        let launch_at_login = NSMenuItem(
+            title: "Launch at Login",
+            action: #selector(toggleLaunchAtLogin),
+            keyEquivalent: "l"
         )
-        checkForUpdatesItem.target = self
-        menu.addItem(checkForUpdatesItem)
-
-        // Automatic Updates Toggle Item
-        let autoUpdatesOn = updateController.automaticallyChecksForUpdates
-        let statusString = autoUpdatesOn ? " On" : " Off"
-        let statusColor = autoUpdatesOn ? NSColor.systemGreen : NSColor.systemRed
-        let attributedTitle = NSMutableAttributedString(string: "Automatic Update Checks: ")
-        let statusAttr = NSAttributedString(string: statusString, attributes: [.foregroundColor: statusColor])
-        attributedTitle.append(statusAttr)
-
-        let autoUpdateItem = NSMenuItem()
-        autoUpdateItem.attributedTitle = attributedTitle
-        autoUpdateItem.action = #selector(toggleAutomaticUpdates)
-        autoUpdateItem.target = self
-        menu.addItem(autoUpdateItem)
-
+        
+        launch_at_login.target = self;
+        updateLaunchAtLoginItem(launch_at_login)
+        
+        menu.addItem(launch_at_login)
+        
         menu.addItem(NSMenuItem.separator())
 
         // Quit
@@ -56,12 +42,14 @@ class ContextMenuManager {
         statusItem.button?.performClick(nil)
         statusItem.menu = nil
     }
-
-    @objc private func toggleAutomaticUpdates() {
-        updateController.automaticallyChecksForUpdates.toggle()
+    
+    private func updateLaunchAtLoginItem(_ item: NSMenuItem) {
+        item.state = LaunchAtLogin.isEnabled ? .on : .off
+    }
+    
+    @objc private func toggleLaunchAtLogin(_ item: NSMenuItem) {
+        LaunchAtLogin.isEnabled = item.state == .off
+        updateLaunchAtLoginItem(item)
     }
 
-    @objc func checkForUpdates() {
-        updateController.checkForUpdates()
-    }
 }

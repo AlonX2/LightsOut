@@ -49,3 +49,13 @@ class DisplayInfo: ObservableObject, Identifiable, Hashable {
         return lhs.id == rhs.id
     }
 }
+
+extension Array where Element == DisplayInfo {
+    
+    func combine(with old: [DisplayInfo] ) -> [DisplayInfo] {
+        map { display in
+            old.first(where: { $0.id == display.id }) ?? display
+        }
+    }
+    
+}
